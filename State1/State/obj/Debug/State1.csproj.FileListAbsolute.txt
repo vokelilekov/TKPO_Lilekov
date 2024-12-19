@@ -1,0 +1,10 @@
+C:\Users\vokel\Desktop\workplace\reports\5\ТКПО\apps\State1\State\bin\Debug\State.exe.config
+C:\Users\vokel\Desktop\workplace\reports\5\ТКПО\apps\State1\State\bin\Debug\State.exe
+C:\Users\vokel\Desktop\workplace\reports\5\ТКПО\apps\State1\State\bin\Debug\State.pdb
+C:\Users\vokel\Desktop\workplace\reports\5\ТКПО\apps\State1\State\obj\Debug\State1.csproj.AssemblyReference.cache
+C:\Users\vokel\Desktop\workplace\reports\5\ТКПО\apps\State1\State\obj\Debug\State.MainForm.resources
+C:\Users\vokel\Desktop\workplace\reports\5\ТКПО\apps\State1\State\obj\Debug\State.Properties.Resources.resources
+C:\Users\vokel\Desktop\workplace\reports\5\ТКПО\apps\State1\State\obj\Debug\State1.csproj.GenerateResource.cache
+C:\Users\vokel\Desktop\workplace\reports\5\ТКПО\apps\State1\State\obj\Debug\State1.csproj.CoreCompileInputs.cache
+C:\Users\vokel\Desktop\workplace\reports\5\ТКПО\apps\State1\State\obj\Debug\State.exe
+C:\Users\vokel\Desktop\workplace\reports\5\ТКПО\apps\State1\State\obj\Debug\State.pdb
