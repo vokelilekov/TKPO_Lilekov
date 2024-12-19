@@ -1,0 +1,80 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\vokel\\Desktop\\workplace\\reports\\5\\\u0422\u041A\u041F\u041E\\apps\\State\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{954DAA20-EDF8-492D-AE10-8F867004E21B}|State\\State.csproj|c:\\users\\vokel\\desktop\\workplace\\reports\\5\\\u0442\u043A\u043F\u043E\\apps\\state\\state\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{954DAA20-EDF8-492D-AE10-8F867004E21B}|State\\State.csproj|solutionrelative:state\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{954DAA20-EDF8-492D-AE10-8F867004E21B}|State\\State.csproj|C:\\Users\\vokel\\Desktop\\workplace\\reports\\5\\\u0422\u041A\u041F\u041E\\apps\\State\\state\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{954DAA20-EDF8-492D-AE10-8F867004E21B}|State\\State.csproj|solutionrelative:state\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{954DAA20-EDF8-492D-AE10-8F867004E21B}|State\\State.csproj|C:\\Users\\vokel\\Desktop\\workplace\\reports\\5\\\u0422\u041A\u041F\u041E\\apps\\State\\state\\phone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{954DAA20-EDF8-492D-AE10-8F867004E21B}|State\\State.csproj|solutionrelative:state\\phone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 298,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 101,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Phone.cs",
+              "DocumentMoniker": "C:\\Users\\vokel\\Desktop\\workplace\\reports\\5\\\u0422\u041A\u041F\u041E\\apps\\State\\State\\Phone.cs",
+              "RelativeDocumentMoniker": "State\\Phone.cs",
+              "ToolTip": "C:\\Users\\vokel\\Desktop\\workplace\\reports\\5\\\u0422\u041A\u041F\u041E\\apps\\State\\State\\Phone.cs",
+              "RelativeToolTip": "State\\Phone.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAswJwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T17:52:40.154Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\vokel\\Desktop\\workplace\\reports\\5\\\u0422\u041A\u041F\u041E\\apps\\State\\State\\MainForm.cs",
+              "RelativeDocumentMoniker": "State\\MainForm.cs",
+              "ToolTip": "C:\\Users\\vokel\\Desktop\\workplace\\reports\\5\\\u0422\u041A\u041F\u041E\\apps\\State\\State\\MainForm.cs",
+              "RelativeToolTip": "State\\MainForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwA0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T17:50:06.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\vokel\\Desktop\\workplace\\reports\\5\\\u0422\u041A\u041F\u041E\\apps\\State\\State\\MainForm.cs",
+              "RelativeDocumentMoniker": "State\\MainForm.cs",
+              "ToolTip": "C:\\Users\\vokel\\Desktop\\workplace\\reports\\5\\\u0422\u041A\u041F\u041E\\apps\\State\\State\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "State\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T17:44:34.191Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
