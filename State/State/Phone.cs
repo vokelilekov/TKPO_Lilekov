@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace StatePatternPhoneApp
 {
@@ -60,8 +61,10 @@ namespace StatePatternPhoneApp
 
         public void AnswerCall(Phone phone)
         {
-            phone.SetState(new ConversationState());
+            var conversationState = new ConversationState();
+            phone.SetState(conversationState);
             Console.WriteLine("Разговор начался.");
+            conversationState.StartBilling(phone);
         }
 
         public void EndCall(Phone phone)
@@ -78,6 +81,7 @@ namespace StatePatternPhoneApp
 
     public class ConversationState : IState
     {
+        private bool isTalking = false;
         public void Call(Phone phone)
         {
             Console.WriteLine("Невозможно совершить звонок во время разговора.");
@@ -98,6 +102,28 @@ namespace StatePatternPhoneApp
         {
             phone.Balance += amount;
             Console.WriteLine($"Баланс пополнен на {amount} единиц.");
+        }
+        public async void StartBilling(Phone phone)
+        {
+            if (isTalking) return; 
+            isTalking = true;
+
+            while (isTalking)
+            {
+                await Task.Delay(5000); 
+                if (!isTalking) break;
+
+                phone.Balance -= 25;
+                Console.WriteLine($"Списано 25");
+
+                if (phone.Balance < 0)
+                {
+                    isTalking = false; 
+                    phone.SetState(new BlockedState());
+                    Console.WriteLine("Баланс отрицательный, телефон заблокирован.");
+                    break;
+                }
+            }
         }
     }
 
@@ -140,6 +166,8 @@ namespace StatePatternPhoneApp
         public double Balance { get; set; }
         public double Probability { get; private set; }
         public string Number { get; private set; }
+
+        private Action updateUI;
 
         public Phone(string number, double balance, double probability)
         {

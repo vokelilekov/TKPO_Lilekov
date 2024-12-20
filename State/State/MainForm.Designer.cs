@@ -80,18 +80,22 @@
             // lblState
             // 
             this.lblState.AutoSize = true;
-            this.lblState.Location = new System.Drawing.Point(55, 43);
+            this.lblState.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblState.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblState.Location = new System.Drawing.Point(55, 38);
             this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(164, 20);
+            this.lblState.Size = new System.Drawing.Size(226, 25);
             this.lblState.TabIndex = 4;
             this.lblState.Text = "Текущее состояние: ";
             // 
             // lblBalance
             // 
             this.lblBalance.AutoSize = true;
-            this.lblBalance.Location = new System.Drawing.Point(246, 116);
+            this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblBalance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblBalance.Location = new System.Drawing.Point(226, 116);
             this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(151, 20);
+            this.lblBalance.Size = new System.Drawing.Size(200, 25);
             this.lblBalance.TabIndex = 5;
             this.lblBalance.Text = "Баланс: 50 единиц";
             // 
@@ -106,6 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(667, 511);
             this.Controls.Add(this.txtRechargeAmount);
             this.Controls.Add(this.lblBalance);
@@ -115,7 +120,8 @@
             this.Controls.Add(this.btnAnswer);
             this.Controls.Add(this.btnCall);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Phone";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

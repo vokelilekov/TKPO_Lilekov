@@ -57,5 +57,10 @@ namespace State
                 MessageBox.Show("Введите корректную сумму для пополнения.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
