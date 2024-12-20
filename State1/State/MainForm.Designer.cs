@@ -106,6 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(667, 511);
             this.Controls.Add(this.txtRechargeAmount);
             this.Controls.Add(this.lblBalance);
@@ -116,6 +117,7 @@
             this.Controls.Add(this.btnCall);
             this.Name = "MainForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

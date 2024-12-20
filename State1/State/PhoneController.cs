@@ -5,8 +5,9 @@ namespace StatePatternPhoneApp
     public class PhoneController
     {
         private readonly Phone phone;
+        
 
-        public PhoneController(Phone phone)
+        public PhoneController(Phone phone, Action updateUI)
         {
             this.phone = phone;
         }
@@ -41,5 +42,6 @@ namespace StatePatternPhoneApp
                 throw new ArgumentException("Некорректная сумма пополнения.");
             }
         }
+
     }
 }

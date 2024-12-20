@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace StatePatternPhoneApp
 {
     public interface IObserver
     {
-        void Update();
+        void Update(IState state, double balance);
     }
 
     public abstract class Observable
@@ -17,11 +18,11 @@ namespace StatePatternPhoneApp
             observers.Add(observer);
         }
 
-        protected void NotifyObservers()
+        protected void NotifyObservers(IState state, double balance)
         {
             foreach (var observer in observers)
             {
-                observer.Update();
+                observer.Update(state, balance);
             }
         }
     }
@@ -30,7 +31,17 @@ namespace StatePatternPhoneApp
     {
         private IState currentState;
 
-        public double Balance { get; set; }
+        private double balance;
+        public double Balance
+        {
+            get => balance;
+            set
+            {
+                balance = value;
+                NotifyObservers(currentState, balance); 
+            }
+        }
+
         public double Probability { get; private set; }
         public string Number { get; private set; }
 
@@ -39,14 +50,7 @@ namespace StatePatternPhoneApp
             Number = number;
             Balance = balance;
             Probability = probability;
-            if (balance >= 0)
-            {
-                currentState = new WaitingState();
-            }
-            else
-            {
-                currentState = new BlockedState();
-            }
+            currentState = balance >= 0 ? new WaitingState() : new BlockedState();
         }
 
         public string GetStateName()
@@ -57,31 +61,27 @@ namespace StatePatternPhoneApp
         public void SetState(IState state)
         {
             currentState = state;
-            NotifyObservers();
+            NotifyObservers(currentState, balance);
         }
 
         public void Call()
         {
             currentState.Call(this);
-            NotifyObservers();
         }
 
         public void AnswerCall()
         {
             currentState.AnswerCall(this);
-            NotifyObservers();
         }
 
         public void EndCall()
         {
             currentState.EndCall(this);
-            NotifyObservers();
         }
 
         public void Recharge(double amount)
         {
             currentState.Recharge(this, amount);
-            NotifyObservers();
         }
     }
 
@@ -131,8 +131,10 @@ namespace StatePatternPhoneApp
         public void Call(Phone phone) => Console.WriteLine("Уже идёт звонок.");
         public void AnswerCall(Phone phone)
         {
-            phone.SetState(new ConversationState());
+            var conversationState = new ConversationState();
+            phone.SetState(conversationState);
             Console.WriteLine("Разговор начался.");
+            conversationState.StartBilling(phone);
         }
         public void EndCall(Phone phone) => Console.WriteLine("Звонок не может быть завершён, так как разговор не начался.");
         public void Recharge(Phone phone, double amount)
@@ -144,6 +146,7 @@ namespace StatePatternPhoneApp
 
     public class ConversationState : IState
     {
+        private bool isTalking = false;
         public void Call(Phone phone) => Console.WriteLine("Невозможно совершить звонок во время разговора.");
         public void AnswerCall(Phone phone) => Console.WriteLine("Разговор уже идёт.");
         public void EndCall(Phone phone)
@@ -155,6 +158,30 @@ namespace StatePatternPhoneApp
         {
             phone.Balance += amount;
             Console.WriteLine($"Баланс пополнен на {amount} единиц.");
+        }
+
+        public async void StartBilling(Phone phone)
+        {
+            if (isTalking) return;
+            isTalking = true;
+
+            while (isTalking)
+            {
+                await Task.Delay(5000);
+
+                if (!isTalking) break;
+
+                phone.Balance -= 25; 
+                Console.WriteLine($"Списано 25 единиц.");
+
+                if (phone.Balance < 0)
+                {
+                    isTalking = false; 
+                    phone.SetState(new BlockedState());
+                    Console.WriteLine("Баланс отрицательный, телефон заблокирован.");
+                    break;
+                }
+            }
         }
     }
 

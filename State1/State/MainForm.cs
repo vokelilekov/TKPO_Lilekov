@@ -6,29 +6,25 @@ namespace State
 {
     public partial class MainForm : Form, IObserver
     {
-        private readonly PhoneController controller;
 
+        private PhoneController controller;
+        private readonly Action updateUI;
         public MainForm()
         {
             InitializeComponent();
-
-            var phone = new Phone("123-456-789", 50.0, 0.5); 
-            phone.AddObserver(this); 
-            controller = new PhoneController(phone); 
-
-            UpdateView();
+            
+            var phone = new Phone("123-456-789", 50.0, 0.5);
+            controller = new PhoneController(phone, UpdateStateLabel); 
+            UpdateStateLabel();
+            phone.AddObserver(this);
         }
 
-        public void Update()
+        private void UpdateStateLabel()
         {
-            UpdateView();
-        }
-
-        private void UpdateView()
-        {
-            lblState.Text = $"Состояние: {controller.GetStateName()}";
+            lblState.Text = $"Текущее состояние: {controller.GetStateName()}";
             lblBalance.Text = $"Баланс: {controller.GetBalance()} единиц";
         }
+
 
         private void btnCall_Click(object sender, EventArgs e)
         {
@@ -76,6 +72,18 @@ namespace State
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public void Update(IState state, double balance)
+        {
+            lblState.Text = $"Текущее состояние: {state.GetType().Name.Replace("State", "")}";
+            lblBalance.Text = $"Баланс: {balance} единиц";
+            updateUI?.Invoke();
+
+        }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
